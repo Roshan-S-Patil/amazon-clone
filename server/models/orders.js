@@ -1,0 +1,56 @@
+import mongoose from "mongoose";
+const orderSchema=mongoose.Schema({
+    products:[],
+    amount:{
+        type:Number,
+        default:0,
+    },
+    paymentMode:{
+        type:String,
+        enum:["prepaid","cod"]
+    },
+    address:{
+        type:Object,
+        required:true
+    },
+    razorpayOrderId:{
+        type:String,
+        default:null,
+    },
+    deliveryDate:{
+        type:String,
+        required:true,
+    },
+    paymentStatus:{
+        type:String,
+    },
+    signatureVerified:{
+        type:Boolean,
+    },
+    orderPlacedDate:{
+        type:Date,
+    },
+    shippedDate:{
+        type:String,
+    },
+    cancellingDate:{
+        type:String,
+    },
+    cancelledDate:{
+        type:String,
+    },
+    deliveredDate:{
+        type:String,
+    },
+    razorpay_payment_id:{
+        type:String,
+        default:null
+    },
+    status:{
+        type:String,
+        enum:["processing","shipped","delivered","cancelled","cancelling"],
+        default:"processing"
+    },
+    
+},{timestamps:true})
+export default mongoose.model("Order",orderSchema)
