@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "src": "/:path",
-      "dest": "https://amazon-clone-ipda.vercel.app/:path"
+      "source": "/:path",
+      "destination": "https://amazon-clone-ipda.vercel.app/:path"
     }
   ]
 }
