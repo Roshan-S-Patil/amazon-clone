@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/:path",
-      "destination": "https://amazon-clone-ipda.vercel.app/:path"
+      "source": "/",
+      "destination": "https://amazon-clone-ipda.vercel.app/"
     }
   ],
   "headers": [
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [
         {
           "type": "query",
