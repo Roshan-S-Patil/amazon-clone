@@ -36,7 +36,7 @@ function App() {
       <Routes>
         {/* OPEN ROUTES */}
           <Route path='/login' element={<LoginAndSignup/>}/>
-          <Route exact path='' element={<Home/>}/>
+          <Route exact path='/' element={<Home/>}/>
           <Route path='/individual-product/:product' element={<IndividualProduct/>}/>
           <Route path="/category/:category" element={<Categories/>}/>
           <Route path='/cart' element={<Cart/>}/>
