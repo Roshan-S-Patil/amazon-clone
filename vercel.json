@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/:path*",
-      "destination": "https://api.example.com/:path*"
+      "destination": "https://amazon-clone-ipda.vercel.app/:path*"
     }
   ]
 }
