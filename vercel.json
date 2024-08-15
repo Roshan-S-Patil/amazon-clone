@@ -2,21 +2,18 @@
     "version": 2,
     "builds": [
       {
-        "src": "/**/*.js",
-        "use": "node"
+        "src": "client/package.json",
+        "use": "@vercel/react-scripts build"
       },
       {
-        "src": "client/package.json",
-        "use": "react-scripts build",
-        "config": {
-          "distDir": "client/build"
-        }
+        "src": "/**/*.js",
+        "use": "@vercel/node"
       }
     ],
     "routes": [
       {
-        "src": "/(.*)",
-        "dest": "/$1"
+        "src": "/api/(.*)",
+        "dest": "/api/$1"
       },
       {
         "src": "/(.*)",
