@@ -1,8 +1,8 @@
 {
-  "rewrites":[
+  "rewrites": [
     {
-      "src":"/(.*)",
-      "dest":"/"
+      "source": "/api/:path*",
+      "destination": "https://api.example.com/:path*"
     }
   ]
 }
