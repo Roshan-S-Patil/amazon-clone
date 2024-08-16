@@ -1,9 +1,13 @@
 {
   "version": 2,
+  "name": "amazon-clone",
   "builds": [
     {
       "src": "client/package.json",
-      "use": "@vercel/npm run build"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
     },
     {
       "src": "server/index.js",
@@ -13,11 +17,11 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "dest": "/server/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/client/build/index.html"
+      "dest": "/client/build/$1"
     }
   ]
 }
