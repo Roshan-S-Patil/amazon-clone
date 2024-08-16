@@ -48,7 +48,7 @@ app.use("/api/review",reviewRoute)
 app.use("/api/order",orderRoute)
 app.use("/api/checkout",checkoutRoute)
 // Serve static files from the React app
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname,'..','client','build','index.html'));
   });
 
