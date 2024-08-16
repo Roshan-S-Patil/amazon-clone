@@ -1,17 +1,37 @@
 {
-  "builds": [
+  "version": 2,
+  "rewrites": [
     {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
+      "source":"/(.*)",
+      "destination":"/client/build/index.html"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/server/index.js"
     }
-  ],
-  "routes": [
+  ], "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "client/build/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, proxy-revalidate"
+        },
+        {
+          "key": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "key": "Expires",
+          "value": "0"
+        }
+      ]
     }
   ]
 }
