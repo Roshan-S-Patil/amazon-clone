@@ -3,23 +3,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/client/build/index.html"
-    },
-    {
-      "source": "/api/(.*)",
       "destination": "/server/index.js"
-    },
-    {
-      "source": "/about",
-      "destination": "/about.html"
-    },
-    {
-      "source": "/old-route",
-      "destination": "/new-route"
-    },
-    {
-      "source": "/products/(.*)",
-      "destination": "/product?id=$1"
     }
   ],
   "headers": [
@@ -40,9 +24,5 @@
         }
       ]
     }
-  ],
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/index.html" }
-    ]
-  
+  ]
 }
