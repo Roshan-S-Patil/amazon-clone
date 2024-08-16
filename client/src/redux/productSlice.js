@@ -1,30 +1,30 @@
 import {createSlice,createAsyncThunk} from "@reduxjs/toolkit"
 import axios from "axios"
 export const fetchProduct=createAsyncThunk("fetchSearchedProducts",async(searchInput)=>{
-        const response=await axios.get(`/products/search?search=${searchInput}`)
+        const response=await axios.get(`/api/products/search?search=${searchInput}`)
         return response;
 
 })
 // 
  export const fetchIndividualProduct=createAsyncThunk("fetchIndividual",async(product)=>{
-    const response=await axios.get(`/products/search-individual?product=${product}`)
+    const response=await axios.get(`/api/products/search-individual?product=${product}`)
     return response
  })
  export const fetchCategories=createAsyncThunk("fetchCategories",async()=>{
-    const response=await axios.get("/products/categories")
+    const response=await axios.get("/api/products/categories")
     console.log(response)
     return response
  })
  export const fetchIndividualCategory=createAsyncThunk("fetchIndividualCategory",async(category)=>{
-    const response=await axios.get(`/products/individual-category?category=${category}`)
+    const response=await axios.get(`/api/products/individual-category?category=${category}`)
     return response.data
  })
  export const fetchProductsOfCategory=createAsyncThunk("fetchProductsOfCategory",async(category)=>{
-    const response = await axios.get(`/products/products-of-category?category=${category}`)
+    const response = await axios.get(`/api/products/products-of-category?category=${category}`)
     return response.data
  })
  export const fetchProductsOfSubCategory=createAsyncThunk("fetchProductsOfSubCategory",async(subcategory)=>{
-    const response = await axios.get(`/products/products-of-subcategory?subcategory=${subcategory}`)
+    const response = await axios.get(`/api/products/products-of-subcategory?subcategory=${subcategory}`)
     return response.data
  })
 const searchProductSlice=createSlice({

@@ -5,7 +5,7 @@ const CancelledProduct = ({product}) => {
     const navigate=useNavigate()
     const [refundStatus,setRefundStatus]=useState(null)
     const checkRefundStatus=async(redundId)=>{
-        const response=await axios.get(`/order/get-refund-status?refundId=${redundId}`)
+        const response=await axios.get(`/api/order/get-refund-status?refundId=${redundId}`)
         setRefundStatus(response.data.status)
     }
     // 

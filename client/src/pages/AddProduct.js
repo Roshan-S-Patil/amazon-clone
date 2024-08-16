@@ -20,7 +20,7 @@ const AddProduct = () => {
     // 
     <div className='mt-14'>
         <h1 className='text-xl font-bold'>ADD PRODUCT</h1>
-      <form action='/products/add' method='post' encType='multipart/form-data' className='max-w-84 flex flex-col gap-2 p-3' >
+      <form action='/api/products/add' method='post' encType='multipart/form-data' className='max-w-84 flex flex-col gap-2 p-3' >
       <input type="hidden" name="addingCategory" value={addingCategory} />
       <input type="hidden" name="addingSubCategory" value={addingSubCategory} />
         <input placeholder='Name' name='name' type="text" className='bg-gray-100 border-sky-100 border-2 rounded-lg p-2' />

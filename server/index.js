@@ -42,13 +42,13 @@ app.use(cors({
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 app.use(express.static(path.join(__dirname,'../client/build')));
-app.use("/user",userRoute)
-app.use("/products",productRoute)
-app.use("/review",reviewRoute)
-app.use("/order",orderRoute)
-app.use("/checkout",checkoutRoute)
+app.use("/api/user",userRoute)
+app.use("/api/products",productRoute)
+app.use("/api/review",reviewRoute)
+app.use("/api/order",orderRoute)
+app.use("/api/checkout",checkoutRoute)
 // Serve static files from the React app
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname,'..','client','build','index.html'));
   });
 

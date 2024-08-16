@@ -3,60 +3,60 @@ import axios from "axios"
 
 // FETCH ALL customers
 export const fetchAllcustomers=createAsyncThunk("fetchAllcustomers",async()=>{
-    const response=await axios.get("/user/all-users");
+    const response=await axios.get("/api/user/all-users");
     return response
 })
 // CHANGE ROLE TO ADMIN
 export const changeRole=createAsyncThunk("changeRole",async({customer_id,role})=>{
-  const response=await axios.patch(`/user/change-role?user_id=${customer_id}&role=${role}`)
+  const response=await axios.patch(`/api/user/change-role?user_id=${customer_id}&role=${role}`)
     return response
   })
 //SEARCH CUSTOMERS
 export const searchCustomers=createAsyncThunk("searchCustomers",async(customerName)=>{
-    const response=await axios.get(`/user/search-user?customerName=${customerName}`);
+    const response=await axios.get(`/api/user/search-user?customerName=${customerName}`);
     return response
 })
 // FETCH PRODUCTS
 export const fetchProducts=createAsyncThunk("fetchProducts",async()=>{
-    const response=await axios.get("/products");
+    const response=await axios.get("/api/products");
     return response
  })
 //SEARCHED PRODUCTS
  export const searchProducts=createAsyncThunk("searchProducts",async(search)=>{
-    const response=await axios.get(`/products/search?search=${search}`)
+    const response=await axios.get(`/api/products/search?search=${search}`)
     return response
  })
 //  UPDATE STOCK
  export const updateStock=createAsyncThunk("updateStock",async({_id,stock})=>{
-    const response=await axios.patch(`/products/update-stock?product_id=${_id}&stock=${stock}`)
+    const response=await axios.patch(`/api/products/update-stock?product_id=${_id}&stock=${stock}`)
     return response
  })
 //  GET CANCELLATION REQUESTS
 export const getCancellationRequests=createAsyncThunk("getCancellationRequests",async()=>{
-    const response=await axios.get("/order/get-cancellation-requests")
+    const response=await axios.get("/api/order/get-cancellation-requests")
     return response.data
 })
 //  GET INDIVIDUAL REQUEST
 export const getIndividualCancellationRequest=createAsyncThunk("getIndividualCancellationRequest",async(reqId)=>{
-    const response=await axios.get(`/order/get-individual-cancellation-request?reqId=${reqId}`)
+    const response=await axios.get(`/api/order/get-individual-cancellation-request?reqId=${reqId}`)
     return response.data
 })
 //  ACCEPT CANCELLATION REQUESTS
 export const accepCancellationRequest=createAsyncThunk("accepCancellationRequest",async({orderId,productId,quantity,amount,paymentId,reqId,userId})=>{
-    const response=await axios.patch(`/order/accept-cancellation-request?userId=${userId}&reqId=${reqId}&orderId=${orderId}&productId=${productId}&quantity=${quantity}&amount=${amount}&paymentId=${paymentId}`)
+    const response=await axios.patch(`/api/order/accept-cancellation-request?userId=${userId}&reqId=${reqId}&orderId=${orderId}&productId=${productId}&quantity=${quantity}&amount=${amount}&paymentId=${paymentId}`)
     return response.data
 })
 //  DENY CANCELLATION REQUESTS
 export const denyCancellationRequest=createAsyncThunk("denyCancellationRequest",async({reqId,productId,orderId})=>{
-    const response=await axios.patch(`/order/deny-cancellation-request?reqId=${reqId}&productId=${productId}&orderId=${orderId}`)
+    const response=await axios.patch(`/api/order/deny-cancellation-request?reqId=${reqId}&productId=${productId}&orderId=${orderId}`)
     return response.data
 })
 export const fetchIndividualOrder=createAsyncThunk("fetchIndividualOrder",async(orderId)=>{
-    const response=await axios.get(`/order/individual-order?orderId=${orderId}`)
+    const response=await axios.get(`/api/order/individual-order?orderId=${orderId}`)
     return response.data
 })
 export const changeOrderStatus=createAsyncThunk("changeOrderStatus",async({orderId,status})=>{
-    const response=await axios.patch(`/order/change-status?orderId=${orderId}&status=${status}`)
+    const response=await axios.patch(`/api/order/change-status?orderId=${orderId}&status=${status}`)
     return response.data
 })
 //  FILTER PRODUCTS

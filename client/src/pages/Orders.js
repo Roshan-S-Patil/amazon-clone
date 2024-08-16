@@ -9,7 +9,7 @@ const Orders = () => {
   useEffect(()=>{
     const getOrders=async()=>{
       setOrdersLoading(true)
-      const orders=await axios.get("/order/get-all-orders")
+      const orders=await axios.get("/api/order/get-all-orders")
       setOrders(orders.data)
       setOrdersLoading(false)
     }

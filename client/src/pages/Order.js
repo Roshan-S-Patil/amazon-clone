@@ -61,7 +61,7 @@ const Order = () => {
   const handlePrepaidOrder=async(e)=>{
     e.preventDefault()
     // Creating Razorpay Order
-    const razorpayOrder=await axios.post("/checkout/order",{amount:orderTotal,currency:"INR"})
+    const razorpayOrder=await axios.post("/api/checkout/order",{amount:orderTotal,currency:"INR"})
     // Creating Order for our backend
     dispatch(createOrder({order:buyNow,address,deliveryDate:deliveryDate,razorpayOrderId:razorpayOrder.data.id,paymentMode:modeOfPayment}));
     var options = {
@@ -72,7 +72,7 @@ const Order = () => {
     description: "Testing...",
     image: "https://res.cloudinary.com/dwievnals/image/upload/c_crop,g_auto,h_800,w_800/sthjbjdpeu7gzoglt8am.",
     order_id: razorpayOrder.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    callback_url: `/checkout/payment-verification?order=${JSON.stringify(razorpayOrder.data)}&product_id=${buyNow._id}`,
+    callback_url: `/api/checkout/payment-verification?order=${JSON.stringify(razorpayOrder.data)}&product_id=${buyNow._id}`,
     redirect:false,
     prefill: { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
         name: user.name, //your customer's name

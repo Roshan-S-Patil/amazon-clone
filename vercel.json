@@ -2,6 +2,10 @@
   "version": 2,
   "rewrites": [
     {
+      "source":"/(.*)",
+      "destination":"/client/build/index.js"
+    },
+    {
       "source": "/api/(.*)",
       "destination": "/server/index.js"
     }

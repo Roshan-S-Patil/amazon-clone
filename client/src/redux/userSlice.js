@@ -1,30 +1,30 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 export const login = createAsyncThunk("login", async (details) => {
-  const response = await axios.post("/user/login", details, {
+  const response = await axios.post("/api/user/login", details, {
     headers: { Accept: "application/json", "Content-Type": "application/json" },
   });
   return response.data;
 });
 export const signup = createAsyncThunk("signup", async (details) => {
-  const response = await axios.post("/user/signup", details, {
+  const response = await axios.post("/api/user/signup", details, {
     headers: { Accept: "application/json" },
   });
   return response.data;
 });
 export const fetchUser = createAsyncThunk("fetchUser", async () => {
-  const response = await axios.get("/user");
+  const response = await axios.get("/api/user");
   return response.data;
 });
 export const addAddress = createAsyncThunk("addAddress", async (details) => {
-  const response = await axios.patch("/user/add-address", details, {
+  const response = await axios.patch("/api/user/add-address", details, {
     headers: { Accept: "application/json" },
   });
   return response.data;
 });
 export const updateCart = createAsyncThunk("updateCart", async (cart) => {
   const response = await axios.patch(
-    "/user/update-cart",
+    "/api/user/update-cart",
     { cart },
     { headers: { Accept: "application/json" } }
   );
@@ -32,7 +32,7 @@ export const updateCart = createAsyncThunk("updateCart", async (cart) => {
 });
 export const createOrder = createAsyncThunk("createOrder",async ({order,address,deliveryDate,razorpayOrderId=null,paymentMode}) => {
     const response = await axios.post(
-      "/order/create-order",
+      "/api/order/create-order",
       { order, razorpayOrderId, address, deliveryDate, paymentMode },
       { headers: { Accept: "application/json" } }
     );
@@ -40,15 +40,15 @@ export const createOrder = createAsyncThunk("createOrder",async ({order,address,
   }
 );
 export const updateUserDetails=createAsyncThunk("updateUserDetails",async(detail)=>{
-    const response=await axios.patch(`/user/update-user-detail?detail=${JSON.stringify(detail)}`)
+    const response=await axios.patch(`/api/user/update-user-detail?detail=${JSON.stringify(detail)}`)
     return response.data
 })
 export const requestCancellation=createAsyncThunk("requestCancellation",async({orderId,productId})=>{
-  const response=await axios.patch(`/order/request-cancellation?orderId=${orderId}&productId=${productId}`)
+  const response=await axios.patch(`/api/order/request-cancellation?orderId=${orderId}&productId=${productId}`)
   return response.data
 })
 export const logout=createAsyncThunk("logout",async()=>{
-  const response=await axios.post("/user/logout")
+  const response=await axios.post("/api/user/logout")
   return response
 })
 const userSlice = createSlice({

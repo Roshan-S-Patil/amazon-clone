@@ -10,7 +10,7 @@ const ExploreCategories = ({category}) => {
     useEffect(()=>{
         setProductsLoading(true)
         async function getProduct(){
-        const products=await axios.get(`/products/explore-categories?category=${category._id}`)
+        const products=await axios.get(`/api/products/explore-categories?category=${category._id}`)
         setProducts(products.data)
         setProductsLoading(false)
     }

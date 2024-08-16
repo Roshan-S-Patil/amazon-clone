@@ -26,7 +26,7 @@ const WriteReview = () => {
         <FaStar onClick={()=>{setRating(5)}} style={{fill:rating>=5?"#FF9800":"gray"}} className='scale-150'/>
          </div>
         </div>
-        <form action='/review/add' method='post' encType='multipart/form-data' className='flex flex-col my-3'>
+        <form action='/api/review/add' method='post' encType='multipart/form-data' className='flex flex-col my-3'>
         <input type="hidden" name="rating" value={rating} />
         <input type="hidden" name="reviewOfProduct" value={reviewOfProduct} />
         <input type="hidden" name="reviewBy" value={reviewBy} />
