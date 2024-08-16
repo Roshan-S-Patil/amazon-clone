@@ -49,7 +49,7 @@ app.use("/api/order",orderRoute)
 app.use("/api/checkout",checkoutRoute)
 // Serve static files from the React app
 app.get('*', (req, res) => {
-  res.sendFile('index.html', { root });
+    res.sendFile(path.join(__dirname,'..','client','build','index.html'));
   });
 
 const uri=process.env.URI
