@@ -9,11 +9,6 @@
       "source": "/api/(.*)",
       "destination": "/server/index.js"
     }
-  ], "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "client/build/index.html"
-    }
   ],
   "headers": [
     {
