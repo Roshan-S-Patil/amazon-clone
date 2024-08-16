@@ -40,3 +40,4 @@ router.get("/categories", getCategories);
 router.patch("/update-stock", updateStock);
 //DELETE
 export default router
+// 

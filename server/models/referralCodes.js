@@ -15,3 +15,4 @@ const referralCodeSchema=mongoose.Schema({
     }
 },{timestamps:true})
 export default mongoose.model("ReferralCode",referralCodeSchema);
+// 

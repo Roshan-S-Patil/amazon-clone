@@ -3,6 +3,7 @@ import { MdPerson } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 
 
+// 
 const Review = ({user,review}) => {
   const [rating,setRating]=useState(0)
   useEffect(()=>{

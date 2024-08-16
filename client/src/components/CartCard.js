@@ -12,6 +12,7 @@ const CartCard = ({product,index}) => {
     const date=new Date(Date.now()+(product?.deliveryDays)*24*3600000).toDateString()
     const deliveryDate=date.slice(0,date.length-5)
   return (
+    // 
     <div className='p-2 mt-14 flex gap-2 sm:gap-10' key={product._id}>
        <div className="prod-image-container w-fit">
       <img onClick={()=>{navigate(`/individual-product/${product._id}`)}} className='w-36 sm:w-60' src={product.images[0]} alt="oneplus" />

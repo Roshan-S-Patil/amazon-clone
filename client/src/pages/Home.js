@@ -39,6 +39,7 @@ const Home = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
   return (
+    // 
     <div className=" relative min-h-screen mt-14 max-w-6xl mx-auto">
       <div className="searchbar flex items-center col-span-3 my-5 px-4 sm:px-28">
         <input

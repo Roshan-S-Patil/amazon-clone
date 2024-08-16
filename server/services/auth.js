@@ -7,3 +7,4 @@ const setUser=({userExists})=>{
     return jwt.sign({_id:userExists?._id,role:userExists?.role},process.env.JWT_SECRET);
 }
 export  {setUser}
+// 

@@ -15,3 +15,4 @@ const withRole = (WrappedComponent, allowedRoles) => {
 };
 
 export default withRole;
+// 

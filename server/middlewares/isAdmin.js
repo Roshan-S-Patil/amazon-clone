@@ -3,3 +3,4 @@ const isAdmin=(req,res,next)=>{
     role==="admin"?next():res.status(400).send("unautorized request")
 }
 export {isAdmin}
+// 

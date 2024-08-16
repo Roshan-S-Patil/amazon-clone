@@ -5,6 +5,7 @@ export const fetchProduct=createAsyncThunk("fetchSearchedProducts",async(searchI
         return response;
 
 })
+// 
  export const fetchIndividualProduct=createAsyncThunk("fetchIndividual",async(product)=>{
     const response=await axios.get(`/products/search-individual?product=${product}`)
     return response

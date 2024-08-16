@@ -8,9 +8,10 @@ import { BiLogoGmail } from "react-icons/bi";
 
 const Footer = () => {
   return (
+    
+// 
 <footer className="bg-gray-100 py-10">
       <div className="container mx-auto flex flex-wrap justify-between">
-        
         {/* Company Info */}
         <div className="w-full sm:w-1/2 md:w-1/4 mb-6">
           <p>Contact Us</p>

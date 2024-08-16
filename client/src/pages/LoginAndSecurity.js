@@ -25,6 +25,7 @@ const[detail,setDetail]=useState({ name:"",
   useEffect(()=>{
     dispatch(fetchUser())
   },[])
+  // 
   return (
     <div className="w-screen mt-14 p-2 sm:p-5">
       <div className="container m-auto w-full">

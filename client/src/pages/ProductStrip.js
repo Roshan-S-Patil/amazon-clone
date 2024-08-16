@@ -66,3 +66,5 @@ const [stock,setStock]=useState()
 };
 
 export default ProductStrip;
+
+// 

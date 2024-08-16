@@ -20,6 +20,7 @@ const IndividualProduct = () => {
   useEffect(()=>{
      dispatch(fetchIndividualProduct(product)) 
   },[])
+  // 
   useEffect(()=>{
     const user= localStorage.getItem("user");
     const localCart= localStorage.getItem("cart");

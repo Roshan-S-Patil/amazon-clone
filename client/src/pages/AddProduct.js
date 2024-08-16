@@ -17,6 +17,7 @@ const AddProduct = () => {
     dispatch(fetchCategories())
     },[])
   return (
+    // 
     <div className='mt-14'>
         <h1 className='text-xl font-bold'>ADD PRODUCT</h1>
       <form action='/products/add' method='post' encType='multipart/form-data' className='max-w-84 flex flex-col gap-2 p-3' >

@@ -99,6 +99,7 @@ const getCategories = async (req, res) => {
     res.status(400).send(error);
   }
 };
+// 
 // Get Category wise Products
 const getCategoryWiseProducts = async (req, res) => {
   const { category } = req.query;

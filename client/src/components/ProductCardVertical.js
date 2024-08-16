@@ -3,6 +3,7 @@ import React from 'react'
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 
+// 
 const ProductCardVertical = ({product}) => {
   const avgRating=(Math.round(product?.totalRating/product?.numberOfReviews*10)/10)
   return (

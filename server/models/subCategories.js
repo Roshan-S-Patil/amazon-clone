@@ -8,3 +8,5 @@ const subCategorySchema=mongoose.Schema({
     
 },{timestamps:true})
 export default mongoose.model("SubCategory",subCategorySchema);
+
+// 

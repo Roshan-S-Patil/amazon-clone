@@ -16,6 +16,7 @@ const IndividualCancellationRequest = () => {
     dispatch(getIndividualCancellationRequest(reqId));
   }, []);
   return (
+    // 
     <div className="mt-14">
       {individualCancellationRequest ? (
         <>

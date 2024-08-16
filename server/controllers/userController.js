@@ -19,6 +19,7 @@ const getAllUsers = async (req, res) => {
     res.status(200).send(error);
   }
 };
+// 
 const getUser = async (req, res) => {
   const { _id } = req.body;
   try {

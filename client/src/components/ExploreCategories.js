@@ -17,6 +17,7 @@ const ExploreCategories = ({category}) => {
     getProduct()
     },[])
   return (
+    // 
     <div className='' key={category._id}>
       {productsLoading?<></>:<>
       <div onClick={()=>{navigate(`/category/${category._id}`)}} className="heading flex items-center">

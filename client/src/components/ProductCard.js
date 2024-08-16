@@ -20,6 +20,7 @@ const ProductCard = ({product}) => {
           }
       }
   }
+  // 
   useEffect(()=>{
     localStorage.setItem("cart",JSON.stringify(cart))
   },[cart])
