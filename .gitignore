@@ -20,3 +20,4 @@ dist/
 
 # Debug files
 *.lock
+.vercel
