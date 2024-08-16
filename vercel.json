@@ -1,27 +1,25 @@
 {
   "version": 2,
-  "name": "amazon-clone",
-  "builds": [
+  "rewrites": [
     {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
+      "source": "/(.*)",
+      "destination": "/client/public/index.js"
     },
     {
-      "src": "server/index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/server/index.js"
+      "source": "/api/(.*)",
+      "destination": "/server/index.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "/client/build/$1"
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/old-route",
+      "destination": "/new-route"
+    },
+    {
+      "source": "/products/(.*)",
+      "destination": "/product?id=$1"
     }
   ]
 }
