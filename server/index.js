@@ -42,7 +42,7 @@ app.use(cors({
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 app.use(express.static(path.join(__dirname,'../client/build')));
-app.use("/user",userRoute)
+app.use("/api/user",userRoute)
 app.use("/api/products",productRoute)
 app.use("/api/review",reviewRoute)
 app.use("/api/order",orderRoute)
