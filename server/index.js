@@ -19,7 +19,7 @@ app.listen(PORT,()=>{
     console.log(`connection estabilished with server on port ${PORT}`)
 })
 app.use(bodyParser.json());
-app.use(express.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser())
 // app.use(cors())
 app.use(cors({
