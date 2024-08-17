@@ -28,15 +28,16 @@ app.use(cors({
     allowedHeaders:'*', // Allow specific headers
     credentials: true, // Enable this if your frontend and backend are on different domains and you want to send cookies
   }))
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-app.use(express.static(path.join(__dirname,'../client/build')));
+
 app.use("/api/user",userRoute)
 app.use("/api/products",productRoute)
 app.use("/api/review",reviewRoute)
 app.use("/api/order",orderRoute)
 app.use("/api/checkout",checkoutRoute)
 // Serve static files from the React app
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+app.use(express.static(path.join(__dirname,'../client/build')));
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname,'..','client','build','index.html'));
   });
