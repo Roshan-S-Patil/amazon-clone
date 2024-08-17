@@ -1,14 +1,3 @@
-// const express=require("express");
-// const mongoose = require("mongoose");
-// const bodyParser=require("body-parser")
-// const cookieParser=require("cookie-parser")
-// const cors=require("cors")
-// const userRoute=require("./routes/userRoute")
-// const productRoute=require("./routes/productRoute")
-// const reviewRoute=require("./routes/reviewRoute")
-// const orderRoute=require("./routes/orderRoute")
-// const checkoutRoute=require("./routes/checkoutRoute")
-// const path=require("path")
 import express from "express"
 import mongoose from "mongoose"
 import bodyParser from "body-parser"
