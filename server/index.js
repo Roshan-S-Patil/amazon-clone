@@ -44,4 +44,4 @@ app.get('*', (req, res) => {
 
 const uri=process.env.URI
 mongoose.connect(uri).then(()=>console.log("connected with database"))
-export default app
+module.exports=app;
