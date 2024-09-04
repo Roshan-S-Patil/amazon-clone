@@ -44,8 +44,10 @@ localStorage.setItem("cart",JSON.stringify(cart));
   let deliveryDate=new Date(Date.now()+((individualProduct?.deliveryDays)*24*3600000)).toDateString()
   const printableDate=deliveryDate.slice(0,deliveryDate.length-5)
   return (
+    
     <div className="individual-product m-auto mt-14 p-2 max-w-6xl">
-    <div className='md:grid grid-cols-2 '>
+    {individualProduct?<>
+      <div className='md:grid grid-cols-2 '>
       <div className="left md:flex-row-reverse md:p-10">
       <div className="big-image-container w-88 ">
           <img className='mx-auto md:w-96' src={bigImage} alt="" defaultValue={individualProduct?.images[0]} />
@@ -132,6 +134,8 @@ localStorage.setItem("cart",JSON.stringify(cart));
             })}
       </div>
       </div>
+    </>:<h1 className='text-2xl font-bold'>Product id loading</h1>}
+   
     </div>
   )
 }

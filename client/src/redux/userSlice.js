@@ -152,7 +152,7 @@ const userSlice = createSlice({
     builder.addCase(fetchUser.rejected, (state, action) => {
       state.userError = true;
       state.userIsLoading = false;
-      window.location.href = "/login";
+      window.location.href("/login");
     });
     // ADD ADDRESS
     builder.addCase(addAddress.pending, (state, action) => {

@@ -111,7 +111,6 @@ const logIn = async (req, res) => {
       if (bcrypt.compare(password, userExists.password)) {
         const token = setUser({ userExists });
         res.cookie("uid", token, {
-          httpOnly: true,
           expires: new Date(Date.now() + 360 * 24 * 3600000),
         });
         res.status(200).send(userExists);

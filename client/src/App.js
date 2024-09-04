@@ -35,29 +35,29 @@ function App() {
       <Navbar/>
       <Routes>
         {/* OPEN ROUTES */}
-          <Route path='/login' element={<LoginAndSignup/>}/>
+          <Route exact path='/login' element={<LoginAndSignup/>}/>
           <Route exact path='/' element={<Home/>}/>
-          <Route path='/individual-product/:product' element={<IndividualProduct/>}/>
-          <Route path="/category/:category" element={<Categories/>}/>
-          <Route path='/cart' element={<Cart/>}/>
+          <Route exact path='/individual-product/:product' element={<IndividualProduct/>}/>
+          <Route exact path="/category/:category" element={<Categories/>}/>
+          <Route exact path='/cart' element={<Cart/>}/>
         {/* LOGGEDIN ROUTES */}
-          <Route path='/order-page' element={<Order/>}/>
-          <Route path='/order-completion' element={<OrderCompletion/>}/>
-          <Route path='/profile' element={<Profile/>}/>
-          <Route path='/profile/your-orders' element={<YourOrders/>}/>
-          <Route path='/profile/addresses' element={<YourAddresses/>}/>
-          <Route path='/profile/login-and-security/:_id' element={<LoginAndSecurity/>}/>
-          <Route path='/write-review/:reviewOfProduct' element={<WriteReview/>}/>
+          <Route exact path='/order-page' element={<Order/>}/>
+          <Route exact path='/order-completion' element={<OrderCompletion/>}/>
+          <Route exact path='/profile' element={<Profile/>}/>
+          <Route exact path='/profile/your-orders' element={<YourOrders/>}/>
+          <Route exact path='/profile/addresses' element={<YourAddresses/>}/>
+          <Route exact path='/profile/login-and-security/:_id' element={<LoginAndSecurity/>}/>
+          <Route exact path='/write-review/:reviewOfProduct' element={<WriteReview/>}/>
         {/* ADMIN ROUTES */}
-          <Route path='admin/manage-order/:orderId' element={<ProtectedRoute element={ManageOrder} allowedRoles={['admin']}/>}/>
-          <Route path='/admin/add-product' element={<ProtectedRoute element={AddProduct} allowedRoles={['admin']}/>}/>
-          <Route path='/admin/dashboard' element={<ProtectedRoute element={Dashboard} allowedRoles={['admin']}/>}/>
-          <Route path='/admin/orders' element={<ProtectedRoute element={Orders} allowedRoles={['admin']}/>}/>
-          <Route path='/admin/customers' element={<ProtectedRoute element={Customers} allowedRoles={['admin']}/>}/>
-          <Route path='/admin/reviews' element={<ProtectedRoute element={Reviews} allowedRoles={['admin']}/>}/>
-          <Route path='/admin/products'element={<ProtectedRoute element={Products} allowedRoles={['admin']}/>}/>
-          <Route path='/admin/cancellation-requests' element={<ProtectedRoute element={CancellationRequests} allowedRoles={['admin']}/>}/>
-          <Route path='/admin/individual-cancelation-request/:reqId' element={<ProtectedRoute element={IndividualCancellationRequest} allowedRoles={['admin']}/>}/>
+          <Route exact path='admin/manage-order/:orderId' element={<ProtectedRoute element={ManageOrder} allowedRoles={['admin']}/>}/>
+          <Route exact path='/admin/add-product' element={<ProtectedRoute element={AddProduct} allowedRoles={['admin']}/>}/>
+          <Route exact path='/admin/dashboard' element={<ProtectedRoute element={Dashboard} allowedRoles={['admin']}/>}/>
+          <Route exact path='/admin/orders' element={<ProtectedRoute element={Orders} allowedRoles={['admin']}/>}/>
+          <Route exact path='/admin/customers' element={<ProtectedRoute element={Customers} allowedRoles={['admin']}/>}/>
+          <Route exact path='/admin/reviews' element={<ProtectedRoute element={Reviews} allowedRoles={['admin']}/>}/>
+          <Route exact path='/admin/products'element={<ProtectedRoute element={Products} allowedRoles={['admin']}/>}/>
+          <Route exact path='/admin/cancellation-requests' element={<ProtectedRoute element={CancellationRequests} allowedRoles={['admin']}/>}/>
+          <Route exact path='/admin/individual-cancelation-request/:reqId' element={<ProtectedRoute element={IndividualCancellationRequest} allowedRoles={['admin']}/>}/>
           <Route path='*' element={<Navigate to={"/"}/>}/> 
           </Routes>
       </Router>

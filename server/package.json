@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Amazon clone with razorpay integration.",
   "main": "index.js",
-  "type": "module",
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "nodemon index.js",
+    "dev":"nodemon index.js"
   },
   "keywords": [],
   "author": "Roshan",

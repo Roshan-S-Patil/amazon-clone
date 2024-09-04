@@ -84,7 +84,7 @@ const LoginAndSignup = () => {
           </p>
         </form>
         </>:<>
-        <form action="" onSubmit={(e)=>{e.preventDefault();dispatch(signup(details));}} className="flex flex-col gap-1">
+        <form action="" onSubmit={(e)=>{e.preventDefault();dispatch(signup(details));setSignedup(true)}} className="flex flex-col gap-1">
           <label className="relative block">
             <span className="absolute inset-y-0 left-0 flex items-center pl-2">
               <MdPerson className="fill-slate-400 " />

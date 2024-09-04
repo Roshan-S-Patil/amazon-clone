@@ -1,13 +1,37 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "."
+      }
+    },
+    {
+      "src": "server/index.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/(.*)",
       "dest": "/server/index.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "/client/build/$1"
+      "src": "/productImages/(.*)",
+      "dest": "/server/productImages/$1"
     }
-   
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; frame-ancestors 'none';" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+      ]
+    }
   ]
 }
