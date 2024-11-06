@@ -23,6 +23,7 @@ import Products from "./pages/Products"
 import CancellationRequests from "./pages/CancellationRequests"
 import { useSelector } from 'react-redux';
 import Categories from './pages/Categories';
+import StoryCam from './pages/StoryCam';
 
 function App() {
   const ProtectedRoute = ({ element: Component, allowedRoles }) => {
@@ -35,6 +36,7 @@ function App() {
       <Navbar/>
       <Routes>
         {/* OPEN ROUTES */}
+          <Route exact path='/story-cam' element={<StoryCam/>}/>
           <Route exact path='/login' element={<LoginAndSignup/>}/>
           <Route exact path='/' element={<Home/>}/>
           <Route exact path='/individual-product/:product' element={<IndividualProduct/>}/>
