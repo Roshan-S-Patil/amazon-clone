@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App xl min-h-screen overflow-x-hidden ">
       <Router>
-      <Navbar/>\
+      <Navbar/>
       <Routes>
         {/* OPEN ROUTES */}
           <Route exact path='/story-cam' element={<StoryCam/>}/>
