@@ -7,7 +7,11 @@ module.exports = {
     extend: {
       translate:{
 
-      }
+      },
+      aspectRatio: {
+        '9/16': '9 / 16',
+        'banner':'4/1'
+      },
     },
   },
   plugins: [],

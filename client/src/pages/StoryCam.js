@@ -69,18 +69,21 @@ const StoryCam = () => {
   
   return (
     <div className='max-w-7xl h-dvh relative'>
-      {capturedImage?<>
-      <img src={capturedImage} alt="captured-image" className='w-96 aspect-video' />
+          <div className='aspect-9/16 max-w-96 relative '>
+      {capturedImage?
+      <>
+      <img src={capturedImage} alt="captured-image" className='w-full h-full' />
       <button className='p-2 bg-amber-500 font-bold' onClick={()=>resetState()}>Reset</button>
       </>:<>
-      <video ref={videoRef} autoPlay muted  className='w-96 aspect-video'></video>
-      <canvas ref={canvasRef} className='w-96 aspect-video hidden'/>
+      <video ref={videoRef} autoPlay muted className='w-full h-full'></video>
+      <canvas ref={canvasRef} className=' hidden'/>
         {!videoRef.current?<>
-            <button onClick={()=>startWebcam()} className='text-black p-4 bg-orange-500'>Start Webcam</button>
+            <button onClick={()=>startWebcam()} className='text-black p-4 bg-orange-500 absolute'>Start Webcam</button>
         </>:<>
-        <button onClick={()=>captureImage()} className='text-black p-4 bg-orange-500'>Capture Image</button>
+        <button onClick={()=>captureImage()} className='text-black p-4 bg-orange-500 absolute'>Capture Image</button>
         </>}
       </>}
+      </div >
     </div>
   )
 }
