@@ -10,7 +10,9 @@ const StoryCam = () => {
     const startWebcam = async () => {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({
-          video: true,
+          video: {
+            aspectRatio:9/16
+          },
         });
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
