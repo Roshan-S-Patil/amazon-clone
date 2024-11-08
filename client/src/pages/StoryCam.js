@@ -1,14 +1,12 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import Image from "next/image";
-import { Position } from "@/types";
 import { IoArrowBack } from "react-icons/io5";
 import { MdOutlineFlipCameraIos } from "react-icons/md";
-import { useRouter } from "next/navigation";
+import {useNavigate} from 'react-router-dom'
 
 const StoryCam = () => {
   // Initializing imports
-const router=useRouter()
+  const navigate=useNavigate()
   // Media Stream
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
@@ -111,7 +109,7 @@ const router=useRouter()
   const leavePage=()=>{
     stopWebcam(); // Stop the webcam if it's active
     setCapturedImage(null); // Reset captured image
-    router.back()
+    navigate('/')
   }
 // --------------------------xxxxxxxxxxxxxxxxxxxxx-------------------------------
   // DRAGGABLE Component Functions
@@ -213,10 +211,9 @@ const router=useRouter()
       <div className="container relative max-w-96 aspect-9/16">
         {capturedImage ? (
           <div className="w-full h-full relative">
-            <Image
-              layout="fill"
+            <img
               src={capturedImage}
-              alt="Captured Image"
+              alt="Captured"
               className="w-full h-full -scale-x-100"
             />
             {/* <div  className="gray h-20 bg-gradient-to-b from-black to-transparent w-full flex justify-center items-center gap-4 pl-3 relative">
