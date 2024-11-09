@@ -50,7 +50,7 @@ const StoryCam = () => {
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: { echoCancellation: true },
         video: {
-          aspectRatio: window.innerWidth > window.innerHeight ? 16 / 9 : 9 / 16,
+          aspectRatio: window.innerWidth > window.innerHeight ? 9 / 16 :16 / 9 ,
           frameRate: { ideal: 30 },
         },
       });
